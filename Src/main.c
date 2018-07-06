@@ -114,7 +114,11 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-
+	//Vozmogno nygno ybrat' zapysk shima.
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+	HAL_COMP_Start_IT(&hcomp1);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
